@@ -1,0 +1,194 @@
+
+SUMMARY: 
+
+AsapTech is an application that gives users the tools they need to work as a team to process help desk tickets. The system will allow Admin users to manage ticket flow and remove or add team members. The system will allow for status updates on tickets and will show the necessary details for knowing what a ticket is for, who handled the ticket, and at what time and date. 
+There will be a sign-in and sign-up page for accounts, and one for Technicians. The first admin created will be able to create new admins as needed. 
+
+For the purpose of this doc: 
+Users = Customers 
+Techs = Admin Users i.e. Accounts with access to ticket processing tools
+SuperAdmin = Admin with all the keys to the castle :) ( this one cannot be deleted)
+
+# MAIN FEATURES
+
+## FEATURE 1: User SignUp/Signin Page
+
+Scenario 1:  User signs up  
+
+* Given a user is on the main page
+* When a user clicks the “Sign Up” button 
+* Then user will see a form for signing up, expand in the same window
+
+Scenario 2: User completes Sign-up form 
+
+* Given the user has completed the sign up form 
+* When a user clicks on "Submit"
+* Then system redirects to Ticket Dashboard with “Welcome Message” 
+
+Scenario 3:  User/Admin Signs-In
+
+* Given User/Admin already exists and has entered their credentials on the main page
+* When "Sign-in" is clicked
+* Then User/Admin will be redirected to their Ticket Dashboard
+
+Scenario 4: Anyone Forgets Password
+
+* Given Anyone Forgets Password
+* When “Forgot Password” button is clicked, anyone enters email, and clicks submit
+* Then the system will send email with password reset instructions.
+
+
+## FEATURE 2: System Roles
+
+Scenario 1: Admin/SuperAdmin creates new Tech
+
+* Given Admin/SuperAdmin is in Technicians Tab
+* When Admin clicks on “Create New Tech”
+* Then Admin will see a form for adding a technician email 
+
+Scenario 3: Admin Submits Form for New Tech
+
+* Given Admin has completed form
+* When Admin clicks on “Send Instructions”
+* Then an Email will be sent to “New Tech” with link for completing sign-up 
+
+Scenario 4: Tech Completes SignUp Form 
+
+* Given Tech has completed Signup Form 
+* When Tech Signs-in
+* Then Tech will see Ticket Dashboard with assigned tickets and Admin will get notification
+
+Scenario 5: SuperAdmin/Admin deletes Tech
+
+* Given Admin is on Technicians Tab
+* When Admin clicks “Delete” near Tech name and “Yes” on “Are you sure” pop-up
+* Then system will assign all tickets to Admin and delete Tech’s Profile 
+
+Scenario 6: Admin/SuperAdmin Delete Ticket
+
+* Given Admin/Super is viewing a ticket
+* When Admin clicks on delete and then “Yes” on “Are you sure” Pop-up
+* Then system deletes ticket, admin is redirected to Ticket Dashboard with confirmation msg
+
+##FEATURE 3: User/Admin Profile 
+
+Scenario 1: Anyone clicks “Edit Profile”
+
+* Given anyone is signed in
+* When anyone clicks “Edit Profile”
+* Then they will be redirected to the “Edit Profile” screen for their profile
+
+Scenario 2: Anyone edits details in their profile
+
+* Given anyone edits a detail in the profile form 
+* When anyone clicks “Update”
+* Then the system will overwrite old details with new details. 
+
+Scenario 3: User wants to deregister
+
+* Given User is signed in and on the Edit Profile Page
+* When user clicks on “Delete My Profile” and “Yes” on “Are you sure Pop-up”
+* Then system will delete all user’s profile and deregister
+
+##FEATURE 5: Ticket Dashboard
+
+Scenario 1: User view Ticket Dashboard
+
+* Given User has signed in
+* When user views dashboard
+* Then the user will see Edit Profile Option, List of Open Tickets and Options to Close or Create new Ticket.
+ 
+Scenario 2: Tech view Ticket Dashboard
+
+* Given Tech has signed in
+* When Tech views dashboard
+* Then Tech will see Edit Profile Option, List of assigned and “Open” Tickets and Options to  Close or Create Ticket.
+
+Scenario 3: Admin/SuperAdmin view Ticket Dashboard
+
+* Given Admin/Super signed in
+* When Admin/Super view dashboard
+* Then Admin/Super will see Edit Profile Option, Users Tab, Techs Tab, All Unassigned Tickets
+
+Scenario 4: SuperAdmin/Tech/Admin can filter tickets
+
+* Given org affiliate has clicked on filter tickets drop-down
+* When either open, new, in progress, resolved/abandoned, assigned**, unassigned** is clicked
+* Then affiliate will see a view of tickets that match the selected status in filter
+** Only Available for Admin or SuperAdmin 
+
+
+## FEATURE 6: Ticketing System
+
+Scenario 1: Anyone creates a ticket
+
+* Given person is signed-in
+* When person clicks on “New Ticket” button
+* Then person will see a form for creating a new ticket
+
+Scenario 2: Anyone completes ticket creation form 
+
+* Given anyone has completed ticket submission form with all required fields
+* When anyone clicks on the “Submit”
+* Then the ticket will be created with status “New” and a confirmation email will be send to both Admin and User. 
+
+Scenario 3: Submit button is clicked with required fields empty
+
+* Given There are empty required fields on ticket form
+* When User clicks submit
+* Then system will show alert “All required fields must be completed”
+
+Scenario 4: Admin/SuperAdmin assigns tickets to Tech
+
+
+* Given Admin sees “New Ticket” in ticket list
+* When admin clicks on assign “Drop-down” and then a tech name
+* Then the ticket will be assigned to that tech and send a notification to tech via email 
+
+Scenario 5: Tech Receives Ticket Assignment
+
+
+* Given Tech has “New” ticket in ticket list 
+* When Tech clicks on “Accept”
+* Then ticket status will change to “In Progress” and email notification will be sent to admin/user 
+
+Scenario 6: Tech sends message to User through Ticket
+
+* Given Tech has clicked on assigned Ticket and typed in a message
+* When Tech clicks on “Submit”
+* Then ticket status will change to “Waiting on Customer” and a notification will be sent to user
+
+Scenario 7: Ticket is Overdue
+
+* Given Tech or Admin have not updated a ticket in over 24 hours
+* When Ticket Status changes to “Overdue”
+* Then Ticket system will send notification to admin/tech with warning and link to ticket
+
+Scenario 7: User has not replied to a ticket in 3 days
+ 
+* Given a tech has sent a message to the user
+* When a user has not replied in over 3 days
+* Then ticket status will change to “Abandoned” and a notification will be sent to user with instructions on how to re-open if needed
+
+Scenario 8: User replies on a ticket with status “Abandoned”
+
+* Given user replies back to “Abandoned” ticket 
+* When user clicks on “Submit”
+* Then the ticket status will change to “Open” and a notification email will be sent to admin/tech
+
+Scenario 9: Tech Closes a Ticket 
+
+* Given Tech has completed the request on the Ticket 
+* When Tech clicks on Drop-down and selects “Resolved”
+* Then ticket status will change to “Resolved” and a notification email will be sent to user and admin, ticket will then be hidden from all views. 
+
+
+Scenario 10: Viewing Resolved or Abandoned Tickets
+
+* Given Ticket is Resolved/Abandoned and therefore hidden 
+* When Tech/User/Admin clicks on view “Closed Tickets”
+* Then viewer will be redirected to page to view all Resolved or Abandoned Tickets
+
+
+
+
