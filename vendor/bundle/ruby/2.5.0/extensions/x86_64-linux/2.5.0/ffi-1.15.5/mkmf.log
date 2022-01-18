@@ -1,0 +1,131 @@
+package configuration for libffi is not found
+have_header: checking for ffi.h... -------------------- no
+
+"gcc -o conftest -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC conftest.c  -L. -L/root/.rbenv/versions/2.5.7/lib -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L. -L/root/.rbenv/versions/2.5.7/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L/root/.rbenv/versions/2.5.7/lib -lruby  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+find_header: checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... -------------------- no
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC -I/usr/local/include conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC -I/usr/include/ffi conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: ffi.h: No such file or directory
+    3 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+block in append_ldflags: checking for whether -Wl,--exclude-libs,ALL is accepted as LDFLAGS... -------------------- yes
+
+"gcc -o conftest -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC conftest.c  -L. -L/root/.rbenv/versions/2.5.7/lib -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L. -L/root/.rbenv/versions/2.5.7/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L/root/.rbenv/versions/2.5.7/lib -lruby -Wl,--exclude-libs,ALL -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+--------------------
+
+block in append_ldflags: checking for whether -pthread is accepted as LDFLAGS... -------------------- yes
+
+"gcc -o conftest -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/x86_64-linux -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0/ruby/backward -I/root/.rbenv/versions/2.5.7/include/ruby-2.5.0 -I. -I/root/.rbenv/versions/2.5.7/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict  -fPIC conftest.c  -L. -L/root/.rbenv/versions/2.5.7/lib -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L. -L/root/.rbenv/versions/2.5.7/lib  -fstack-protector -rdynamic -Wl,-export-dynamic -Wl,--exclude-libs,ALL     -Wl,-rpath,/root/.rbenv/versions/2.5.7/lib -L/root/.rbenv/versions/2.5.7/lib -lruby -pthread -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_FFI_PREP_CIF_VAR 1
+4: #define USE_INTERNAL_LIBFFI 1
+5: #endif
+/* end */
+
