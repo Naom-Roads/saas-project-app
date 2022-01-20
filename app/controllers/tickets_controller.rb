@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /tickets or /tickets.json
   def index
     @tickets = Ticket.all
@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1 or /tickets/1.json
   def show
+    
   end
 
   # GET /tickets/new

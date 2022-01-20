@@ -14,15 +14,15 @@
   </thead>
 
   <tbody>
-    <% @tickets.each do |ticket| %>
+    <% @tickets.each do |t| %>
       <tr>
-        <td><%= ticket.ticket %></td>
-        <td><%= ticket.subject %></td>
-        <td><%= ticket.description %></td>
-        <td><%= ticket.user_id %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= t.ticket_number %></td>
+        <td><%= t.subject %></td>
+        <td><%= t.description %></td>
+        <td><%= t.user_id %></td>
+        <td><%= link_to 'Show', tickets_path %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(t) %></td>
+        <td><%= link_to 'Destroy', t, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
