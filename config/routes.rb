@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions"}
 
   root 'home#index'
+  
 
+  # get 'action', to: 'controllerfilepath#method'
 
-  # get 'sign_in', to: 'users/sessions#new'
-  # delete 'sign_out', to: 'users/sessions#destroy'
 
   
   
