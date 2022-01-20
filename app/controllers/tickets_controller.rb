@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  after_create :increment_tickets
   # GET /tickets or /tickets.json
   def index
     @tickets = Ticket.all
@@ -24,6 +25,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
+    @ticket.number = ticket_id
     respond_to do |format|
       if @ticket.save
         format.html { redirect_to ticket_url(@ticket), notice: "Ticket was successfully created." }
@@ -62,6 +64,10 @@ class TicketsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
       @ticket = Ticket.find(params[:id])
+    end
+
+    def increment_tickets 
+      Account.increment_counter(:ticket_number, self.account_id)
     end
 
     # Only allow a list of trusted parameters through.
