@@ -11,7 +11,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'https://naoms-saas-project.herokuapp.com/', :protocol => 'https'}
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -118,4 +118,7 @@ config.action_mailer.delivery_method = :smtp
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+ 
+  config.action_mailer.default_url_options = { :host => 'naoms-saas-project.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.delivery_method = :smtp
 end

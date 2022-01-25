@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
+      
+
   # GET /resource/confirmation/new
   def new
     super
@@ -17,8 +19,10 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def unconfirmed_email
-    @user = User.find()
-
+    @user = User.find(user[:user_id])
+    if @user.confirmed?
+       @user.send_confirmation_instructions
+    end
   end
 
   protected

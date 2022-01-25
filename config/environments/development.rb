@@ -9,12 +9,10 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
-  config.action_mailer.raise_delivery_errors = false
-  
-  # Show full error reports.
-  config.consider_all_requests_local = true
+  config.eager_load = true
+
+ # Show full error reports.
+ config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -74,5 +72,11 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Uncomment if you wish to allow Action Cable access from any origin.
-  # config.action_cable.disable_request_forgery_protection = true
+  config.action_mailer.default_url_options = { :host => 'naoms-saas-project.herokuapp.com', :protocol => 'https'}
+  config.action_cable.disable_request_forgery_protection = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1080 }
+  config.action_mailer.raise_delivery_errors = false
+  
+
 end
