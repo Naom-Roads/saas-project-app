@@ -1,5 +1,5 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.8/ext/nio4r
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-p37eot.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-f2qywk.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for linux/io_uring.h... yes
@@ -12,10 +12,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR="
+make DESTDIR\=
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -384,5 +384,5 @@ cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
 linking shared-object nio4r_ext.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20220117-3308-1cgwfd6
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20220125-16359-1fmky3

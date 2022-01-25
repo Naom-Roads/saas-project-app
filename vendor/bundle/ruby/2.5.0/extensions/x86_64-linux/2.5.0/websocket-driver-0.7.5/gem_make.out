@@ -1,15 +1,15 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-1li14ru.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-jtbsq2.rb extconf.rb
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR="
+make DESTDIR\=
 compiling websocket_mask.c
 linking shared-object websocket_mask.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20220117-3308-rdbjs6
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20220125-16359-1ajvps0

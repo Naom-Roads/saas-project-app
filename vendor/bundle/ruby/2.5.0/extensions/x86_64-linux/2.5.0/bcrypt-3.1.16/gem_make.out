@@ -1,12 +1,12 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-135akjl.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-np6ndv.rb extconf.rb
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR="
+make DESTDIR\=
 compiling bcrypt_ext.c
 compiling crypt_blowfish.c
 gcc  -D__SKIP_GNU -I/root/.rbenv/versions/2.5.7/include     -c -o x86.o x86.S
@@ -21,5 +21,5 @@ cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
 linking shared-object bcrypt_ext.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20220117-3308-1t1xqjn
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20220125-16359-cx59o0

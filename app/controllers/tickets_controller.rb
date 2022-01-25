@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit, :create]
   after_action :create, :increment_tickets
   
   # GET /tickets or /tickets.json
@@ -10,7 +11,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1 or /tickets/1.json
   def show
-    
+    @ticket = Ticket.find(ticket_params[:ticket])
   end
 
   # GET /tickets/new
@@ -24,7 +25,7 @@ class TicketsController < ApplicationController
 
   # POST /tickets or /tickets.json
   def create
-    @ticket.number = Account.find(session[:account_id]).ticket_counter
+    @ticket.number = User.find(ticket_params[:ticket]).ticket_counter
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
     respond_to do |format|
@@ -68,7 +69,8 @@ class TicketsController < ApplicationController
     end
 
     def increment_tickets 
-      Account.increment_counter(:ticket_number, self.account_id)
+      @user = User.find(params[:user_id])
+      User.increment_counter(:ticket_number, self.ticket_id)
     end
 
     # Only allow a list of trusted parameters through.

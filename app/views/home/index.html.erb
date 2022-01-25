@@ -1,17 +1,26 @@
 
-<h1>Home#index</h1>
-
 
 <body>
 
-<% if current_user %>
+<%# Testing Bootstrap %>
+
+<div class="container mt-4 border">
+  <div class="container-content">
+    <h1 class="m-3">Homepage</h1>
+    <div class="m-3">
+    <p class=""></p>
+    <% if current_user %>
 <%= button_to 'Sign Out', destroy_user_session_path, method: :delete%>
 <% else %>
 <%= link_to 'Sign up', new_user_registration_path %>
 <%= link_to 'Sign In', new_user_session_path %>
 <% end %>
 <%= render 'layouts/alerts' %>
+<%= button_to 'Tickets', tickets_path %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Tickets', tickets_path %>
+
 
 </body>

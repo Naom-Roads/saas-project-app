@@ -1,5 +1,5 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-1madj0v.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-wt9ihi.rb extconf.rb
 /root/.rbenv/versions/2.5.7/lib/ruby/2.5.0/mkmf.rb:1554: warning: Insecure world writable dir /mnt/c in PATH, mode 040777
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... no
@@ -9,10 +9,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c
-make "DESTDIR="
+make DESTDIR\=
 Configuring libffi
 make -C "/mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c/libffi-x86_64-linux"
 make[1]: Entering directory '/mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c/libffi-x86_64-linux'
@@ -118,7 +118,7 @@ compiling ffi.c
 linking shared-object ffi_c.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c
-make "DESTDIR=" install
+make DESTDIR\= install
 make -C "/mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c/libffi-x86_64-linux"
 make[1]: Entering directory '/mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/ffi-1.15.5/ext/ffi_c/libffi-x86_64-linux'
 make  all-recursive
@@ -163,4 +163,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220117-3308-1smf0fj
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220125-16359-a74419

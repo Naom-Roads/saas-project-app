@@ -1,15 +1,15 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-j1odvv.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-8uxovt.rb extconf.rb
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR="
+make DESTDIR\=
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20220117-3308-mlwzya/skiptrace/internal
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20220125-16359-1yjo1n7/skiptrace/internal

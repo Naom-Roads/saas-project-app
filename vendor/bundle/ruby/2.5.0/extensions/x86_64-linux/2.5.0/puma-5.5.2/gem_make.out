@@ -1,5 +1,5 @@
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/puma-5.5.2/ext/puma_http11
-/root/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20220117-3308-1ntp8pt.rb extconf.rb
+/root/.rbenv/versions/2.5.7/bin/ruby -I /root/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20220125-16359-14sael6.rb extconf.rb
 /root/.rbenv/versions/2.5.7/lib/ruby/2.5.0/mkmf.rb:1554: warning: Insecure world writable dir /mnt/c in PATH, mode 040777
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
@@ -13,15 +13,15 @@ checking for Random.bytes... no
 creating Makefile
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/puma-5.5.2/ext/puma_http11
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/puma-5.5.2/ext/puma_http11
-make "DESTDIR="
+make DESTDIR\=
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.so
 
 current directory: /mnt/c/Users/Naoms/Desktop/Rails-Ticketing-System-Demo/sass_project/vendor/bundle/ruby/2.5.0/gems/puma-5.5.2/ext/puma_http11
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20220117-3308-126cq8n/puma
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20220125-16359-2mfy2w/puma
