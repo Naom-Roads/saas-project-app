@@ -16,6 +16,11 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     super
   end
 
+  def unconfirmed_email
+    @user = User.find()
+
+  end
+
   protected
 
   # The path used after resending confirmation instructions.
