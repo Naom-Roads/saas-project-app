@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'home#index'
-  get 'user', to: 'user#show'
-  # get 'action', to: 'controllerfilepath#method'
+  get 'users/:id', to: 'users#show'
 
-
-  
-  
 end

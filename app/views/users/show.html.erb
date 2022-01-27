@@ -1,6 +1,12 @@
 <h1>User Profile Page</h1>
 
 <h3>Tickets List</h3>
+
+
+  <p><strong>Name:</strong><%= @user.first_name %></p>
+
+
+
 <% @tracked_tickets.each do |t| %>
   <% t.subject %>
 
