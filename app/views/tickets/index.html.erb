@@ -20,8 +20,8 @@
         <td><%= t.subject %></td>
         <td><%= t.description %></td>
         <td><%= t.user_id %></td>
-        <td><%= link_to 'Show', tickets_path %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(t) %></td>
+        <td><%= link_to 'Show', ticket_path(t.id) %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(t.id) %></td>
         <td><%= link_to 'Destroy', t, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
