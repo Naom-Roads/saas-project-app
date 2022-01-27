@@ -1,16 +1,21 @@
 <div class="gradient-custom border">
-  <ul class="nav justify-content-center">
+  <nav class="navbar navbar-dark bg-dark justify-content-between">
     <li class="nav-item">
-      <% class="nav-link active" aria-current="page" href="http://localhost:3000">Homepage</a>
+      <a class="nav-link active" aria-current="page" href="http://localhost:3000">ASAPTICKET</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Bootstrap doc</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
+    <form class="form-inline">
+      <% if current_user %>
+        <li class="nav-item">
+          <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= button_to 'Sign in', new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Sign up', new_user_registration_path %>
+        </li>
+      <% end %>
+    </form>
+  </nav>
 </div>

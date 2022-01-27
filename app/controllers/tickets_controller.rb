@@ -26,7 +26,7 @@ class TicketsController < ApplicationController
   # POST /tickets or /tickets.json
   def create
     @ticket.number = User.find(ticket_params[:ticket]).ticket_counter
-    @ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new
     @ticket.user = current_user
     respond_to do |format|
       if @ticket.save
