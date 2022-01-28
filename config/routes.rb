@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-  get 'user/:id', to: 'user#dashboard'
+  get 'users/:id', to: 'dashboard#show', as: 'user'
 
 end
