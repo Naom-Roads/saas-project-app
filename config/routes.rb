@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   resources :tickets
   devise_for :users
+  devise_scope :user do
+    get 'users/sign_out', to: 'devise/sessions#destroy'
+  end
 
   root 'home#index'
-  get 'users/:id', to: 'users#show'
+  get 'user/:id', to: 'user#dashboard'
 
 end
