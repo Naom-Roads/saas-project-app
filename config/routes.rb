@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'users/:id', to: 'dashboard#show', as: 'user'
+  get 'tickets', to: 'dashboard#index'
 
 end
