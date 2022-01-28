@@ -1,8 +1,8 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :admin_user, only: [:destroy]
   before_action :set_user, only: %i[show edit create]
-  after_action :create, :ticket_counter
 
   # GET /tickets or /tickets.json
   def index
@@ -25,12 +25,16 @@ class TicketsController < ApplicationController
 
   # POST /tickets or /tickets.json
   def create
-    @ticket = Ticket.new
-    @ticket.user_id = current_user
+    @ticket = Ticket.new(ticket_params)
+    @ticket.user = current_user
     if @ticket.save
-      redirect_to ticket_url(@ticket), flash.now[:notice] = "Ticket was successfully created."
+      flash[:notice] = "Ticket was successfully created."
+      redirect_to ticket_url(@ticket)
+      return
     else
       flash.now[:alert] = "Ticket could not be created, please try again"
+      render :new
+      return
     end
   end
 
@@ -67,15 +71,9 @@ class TicketsController < ApplicationController
     @user = current_user
   end
 
-  def ticket_counter
-    @ticket = Ticket.last
-    @ticket_number = @ticket[:ticket_number]
-    @ticket_number.nil? ? @ticket_number = @ticket.id + 1000 : @ticket_number
-  end
 
-  # Only allow a list of trusted parameters through.
   def ticket_params
-    params.permit(:id, :ticket_number, :subject, :description, :ticket_status, :user_id)
+    params.require(:ticket).permit(:id, :ticket_number, :subject, :description, :ticket_status)
   end
 
 end

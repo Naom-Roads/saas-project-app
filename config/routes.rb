@@ -7,6 +7,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'users/:id', to: 'users#show'
-  get 'tickets/:id', to: 'tickets#show'
 
 end
