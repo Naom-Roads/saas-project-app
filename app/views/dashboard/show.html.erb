@@ -24,12 +24,14 @@
       <td><%= link_to 'Edit', edit_ticket_path(t.id) %></td>
       <td><%= button_to 'Destroy', t , method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
   </tbody>
+  <% end %>
+
+  <%= link_to 'New Ticket', new_ticket_path(@tickets) %>
 </table>
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+
 
 

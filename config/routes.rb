@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   default_url_options :host => 'localhost:3000'
 
+
   resources :tickets
+
+
   devise_for :users
   devise_scope :user do
     get 'users/sign_out', to: 'devise/sessions#destroy'
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'users/:id', to: 'dashboard#show', as: 'user'
-  get 'tickets', to: 'dashboard#index'
+  get 'users/:id', to: 'dashboard#index'
+
 
 end

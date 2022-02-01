@@ -3,7 +3,6 @@ class DashboardController < ApplicationController
 
   def index
     @user = current_user
-    @tickets = @user.tickets
   end
 
   def show
@@ -16,7 +15,6 @@ class DashboardController < ApplicationController
   end
 
   def edit
-
   end
 
 end

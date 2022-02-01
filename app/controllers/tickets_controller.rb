@@ -1,15 +1,15 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  before_action :is_admin?
   before_action :set_user, only: %i[show edit create destroy]
 
   # GET /tickets or /tickets.json
+  # if user is an admin they can see all tickets otherwise user_path only shows tickets that belong to user
   def index
-    if !user.admin?
-      @tickets = current_user(@tickets)
-    else
+    if current_user.admin?
       @tickets = Ticket.all
+    else
+      redirect_to user_path(current_user)
     end
   end
 
@@ -75,9 +75,6 @@ class TicketsController < ApplicationController
     @user = current_user
   end
 
-  def is_admin?
-    redirect_to user_path(current_user) unless current_user.admin?
-  end
 
   def ticket_params
     params.require(:ticket).permit(:id, :ticket_number, :subject, :description, :ticket_status)
