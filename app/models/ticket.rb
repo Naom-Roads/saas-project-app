@@ -1,13 +1,11 @@
 class Ticket < ApplicationRecord
   belongs_to :user
   validates :subject, :description, presence: true
+  after_validation :set_ticket_number, on: :create
 
 
-  # def set_ticket_number
-  #   @ticket = Ticket.last
-  #   @ticket_number = @ticket[:ticket_number]
-  #   @ticket_number.nil? ? @ticket_number = @ticket.id + 1000 : @ticket_number
-  # end
-  #
+  def set_ticket_number
+    self.ticket_number = rand(1...1000)
+  end
 
 end
