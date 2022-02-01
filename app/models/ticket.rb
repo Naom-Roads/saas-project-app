@@ -5,7 +5,7 @@ class Ticket < ApplicationRecord
 
 
   def set_ticket_number
-    self.ticket_number = rand(1...1000)
+    self.ticket_number = Ticket.order(created_at: :desc).first.ticket_number + 1
   end
 
 end
