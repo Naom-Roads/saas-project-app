@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'dashboard#show', as: 'user'
   get 'users/:id', to: 'dashboard#index'
 
-  get 'comments', to: 'comments#show' #should this be show or index? Intended behavior is that they reply on a ticket comment thread
+  get 'comments', to: 'comments#index'
+  get 'comment', to: 'comments#show'
   post 'comment', to: 'comments#create'
 
 end

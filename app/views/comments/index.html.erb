@@ -1,0 +1,33 @@
+<!-- This is what we will use to show a list of messages belonging to the ticket-->
+
+<h1>Tickets</h1>
+
+<table class="table table-dark table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Ticket Status</th>
+    <th scope="col">From</th>
+    <th scope="col">Subject</th>
+    <th scope="col">Body</th>
+    <th scope="col">User</th>
+    <th scope="row"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @messages.each do |m| %>
+    <tr>
+      <td><%= @tickets.ticket_status %></td>
+      <td> # Tech assigned will display here</td>
+      <td><%= m.subject %></td>
+      <td><%= m.body %></td>
+      <td><%= m.user_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button type="button" class="m-1 btn btn-warning">
+  <%= link_to 'Submit', new_message_path %>
+</button>
