@@ -1,3 +1,5 @@
 class TicketSerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :comments
+  # why does has_many need a method?
+  attributes :id, :ticket_number, :ticket_status, :subject, :description
 end
