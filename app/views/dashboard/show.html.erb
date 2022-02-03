@@ -6,6 +6,7 @@
   <thead>
   <tr>
     <th scope="col">Ticket Number</th>
+    <th scope="col">Ticket Status</th>
     <th scope="col">Subject</th>
     <th scope="col">Description</th>
     <th scope="col">User</th>
@@ -14,10 +15,11 @@
     <th scope="row"></th>
   </tr>
   </thead>
-  <tbody>
+  <tbody class="mt-2 p-3">
   <% @tickets.each do |t| %>
     <tr>
       <td><%= t.ticket_number %></td>
+      <td><%= t.ticket_status %></td>
       <td><%= t.subject %></td>
       <td><%= t.description %></td>
       <td><%= t.user_id %></td>

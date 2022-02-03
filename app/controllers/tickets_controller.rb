@@ -31,6 +31,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
+    @ticket.ticket_status = "New" if @ticket.ticket_status.nil?
     if @ticket.save
       flash[:notice] = "Ticket was successfully created."
       redirect_to ticket_url(@ticket)
