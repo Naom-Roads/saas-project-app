@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   default_url_options :host => 'localhost:3000'
 
-  resources :tickets
+
+  resources :tickets do
+    resources :comments, shallow: true
+  end
 
   devise_for :users
 
@@ -13,9 +16,4 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'users/:id', to: 'dashboard#show', as: 'user'
   get 'users/:id', to: 'dashboard#index'
-
-  get 'comments', to: 'comments#index'
-  get 'comment', to: 'comments#show'
-  post 'comment', to: 'comments#create'
-
 end

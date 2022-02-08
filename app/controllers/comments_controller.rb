@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment = Comment.find(params[:id])
+    @ticket = Ticket.find(params[:id])
+    @comment = @ticket.comments
   end
 
   def new
@@ -14,9 +15,16 @@ class CommentsController < ApplicationController
   end
 
   def create
-
-
-
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user
+    if @comment.save
+      redirect_to ticket_url(@ticket)
+      return
+    else
+      flash.now[:alert] = "Message could not be sent, please try again"
+      render :new
+      return
+    end
   end
 
   def destroy
@@ -28,7 +36,7 @@ class CommentsController < ApplicationController
 
 
   def comment_params
-    params.require(:comment).permit(:id, :ticket_number, :subject, :body, :ticket_status)
+    params.require(:comment).permit(:id, :subject, :body, :username, :ticket_id)
     # can I include params from other objects like this?
   end
 
