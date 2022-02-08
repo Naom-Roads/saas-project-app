@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :comments
 
 
+  def username
+    if user.username.nil?
+      email.split('@')[0].capitalize
+    end
+  end
 end

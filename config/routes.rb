@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :tickets do
     resources :comments, shallow: true
+    # post 'comment', to: 'comments#create'
   end
 
   devise_for :users

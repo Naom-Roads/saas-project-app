@@ -1,33 +1,31 @@
 <!-- This is what we will use to show a list of messages belonging to the ticket-->
 
-<h1>Tickets</h1>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+<!--      Gravatar will go in place of image -->
+    </div>
+    <div class="col-md-8">
+      <% @comments.each do |m| %>
+      <div class="card-header">
+<!--        <span> # Tech assigned will display here</span>-->
+        <span><%= "User: #{m.subject}" %></span>
+      </div>
+      <div class="card-body">
+            <p class="card-text"><%= m.body %></p>
+        <p class="card-text"><small class="text-muted"><%="Last updated #{m.created_at}" %></small></p>
+        <% end %>
 
-<table class="table table-dark table-hover">
-  <thead>
-  <tr>
-    <th scope="col">Ticket Status</th>
-    <th scope="col">From</th>
-    <th scope="col">Subject</th>
-    <th scope="col">Body</th>
-    <th scope="col">User</th>
-    <th scope="row"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @comments.each do |m| %>
-    <tr>
-      <td><%= @ticket.ticket_status %></td>
-      <td> # Tech assigned will display here</td>
-      <td><%= m.subject %></td>
-      <td><%= m.body %></td>
-      <td><%= m.user_id %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <br>
 
 <button type="button" class="m-1 btn btn-warning">
-  <%= link_to 'Submit', new_ticket_comment_path(@ticket) %>
+  <%= render 'comments/form' %>
+
 </button>

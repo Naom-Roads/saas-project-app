@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
-  before_action :require_user
+  before_action :authenticate_user!
+  before_action :set_ticket
 
   def index
     @comments = Comment.all
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
-    @comment = @ticket.comments
+    @comment = @ticket.comments.order(created_at: :desc)
   end
 
   def new
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = @ticket.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
       redirect_to ticket_url(@ticket)
@@ -36,9 +36,12 @@ class CommentsController < ApplicationController
 
 
   def comment_params
-    params.require(:comment).permit(:id, :subject, :body, :username, :ticket_id)
+    params.require(:comment).permit(:body, :ticket_id)
     # can I include params from other objects like this?
   end
 
+  def set_ticket
+    @ticket = Ticket.find(params[:ticket_id])
+  end
 
 end

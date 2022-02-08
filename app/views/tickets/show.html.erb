@@ -4,6 +4,12 @@
 </p>
 
 <p>
+  <strong>Ticket:</strong>
+  <%= @ticket.ticket_status%>
+</p>
+
+
+<p>
   <strong>Subject:</strong>
   <%= @ticket.subject %>
 </p>
@@ -15,7 +21,6 @@
 
 <p>
 <strong>Comments</strong>
-#Comments will go here
   <%= render 'comments/comments' %>
 </p>
 
