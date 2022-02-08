@@ -6,5 +6,8 @@ class User < ApplicationRecord
   has_many :tickets
   has_many :comments, dependent: :destroy
 
+  def display_name
+    username.nil? ? email.split('@')[0].capitalize : username
+  end
 
 end

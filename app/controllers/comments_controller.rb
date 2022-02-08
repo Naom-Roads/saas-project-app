@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_username
   before_action :set_ticket
 
   def index
@@ -38,14 +37,10 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_username
-    @user = current_user
-    @user.username.nil? ? @user.username = @user.email.split('@')[0].capitalize : @user.username
-  end
+
 
   def comment_params
-    params.require(:comment).permit(:id, :body, :subject, :ticket_id, :user_id)
-    # can I include params from other objects like this?
+    params.require(:comment).permit(:body, :subject)
   end
 
   def set_ticket
