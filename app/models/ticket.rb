@@ -1,6 +1,6 @@
 class Ticket < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   validates :subject, :description, presence: true
   after_validation :set_ticket_number, on: :create
 

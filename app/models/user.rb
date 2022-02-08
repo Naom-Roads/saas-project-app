@@ -4,12 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :tickets
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
 
-  def username
-    if user.username.nil?
-      email.split('@')[0].capitalize
-    end
-  end
 end

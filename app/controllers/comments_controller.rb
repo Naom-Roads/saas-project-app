@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_username
   before_action :set_ticket
 
   def index
@@ -28,15 +29,22 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to tickets_url(@ticket), notice: "Comment was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
-
 
   private
 
+  def set_username
+    @user = current_user
+    @user.username.nil? ? @user.username = @user.email.split('@')[0].capitalize : @user.username
+  end
 
   def comment_params
-    params.require(:comment).permit(:body, :ticket_id)
+    params.require(:comment).permit(:id, :body, :subject, :ticket_id, :user_id)
     # can I include params from other objects like this?
   end
 
