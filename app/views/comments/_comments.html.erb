@@ -15,6 +15,8 @@
       <div class="card-body">
             <p class="card-text"><%= m.body %></p>
         <p class="card-text"><small class="text-muted"><%="Last updated #{m.created_at}" %></small></p>
+        <p><%= link_to 'Edit', edit_comment_path(m.id) %></p>
+        <p><%= button_to 'Destroy', m , method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
 
       </div>

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ticket
+  before_action :set_ticket, only: %i[show]
 
   def index
     @comments = Comment.all
@@ -28,6 +28,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to tickets_url(@ticket), notice: "Comment was successfully destroyed." }
