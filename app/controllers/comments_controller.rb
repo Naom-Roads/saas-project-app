@@ -19,26 +19,23 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       redirect_to ticket_url(@ticket)
-      return
     else
       flash.now[:alert] = "Message could not be sent, please try again"
       render :new
-      return
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to tickets_url(@ticket), notice: "Comment was successfully destroyed." }
-      format.json { head :no_content }
+    if @comment.user == current_user || @user.admin?
+       @comment.destroy
+      flash[:notice] = "Comment was successfully destroyed."
+    else
+      flash[:alert] = "You cannot delete the messages of other users"
     end
   end
 
   private
-
-
 
   def comment_params
     params.require(:comment).permit(:body, :subject)

@@ -14,12 +14,12 @@
   </tr>
   </thead>
   <tbody>
-  <% @comments.each do |m| %>
+
     <tr>
-      <td><%= @tickets.ticket_status %></td>
-      <td> # Tech assigned will display here</td>
+      <% @comments.each do |m| %>
+        <td> # Tech assigned will display here</td>
       <td><%= m.subject %></td>
-      <td><%= m.username %></td>
+      <td><%= m.user %></td>
       <td><%= link_to 'Edit', edit_comment_path(m.id) %></td>
       <td><%= button_to 'Destroy', m , method: :delete, data: { confirm: 'Are you sure?' } %>
     </tr>
@@ -32,6 +32,3 @@
 
 <br>
 
-<button type="button" class="m-1 btn btn-warning">
-  <%= link_to 'Submit', new_tickets_comments_path %>
-</button>
