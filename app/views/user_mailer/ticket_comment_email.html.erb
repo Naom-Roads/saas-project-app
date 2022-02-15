@@ -8,7 +8,7 @@
 <h1>A Comment was added to <%= @ticket.ticket_number %> </h1>
 
 <p>
-  <%= @user.username %> added a comment to your ticket, head over to the ticket by
+  <%= @user.display_name %> added a comment to your ticket, head over to the ticket by
   following this link: <%= link_to Ticket, ticket_url(@ticket) %>
 </p>
 
