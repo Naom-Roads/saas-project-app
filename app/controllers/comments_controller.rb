@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ticket, only: %i[show]
+  before_action :set_ticket, only: %i[show, edit, create]
 
   def index
     @comments = Comment.all
