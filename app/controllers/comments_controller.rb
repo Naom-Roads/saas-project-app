@@ -18,7 +18,9 @@ class CommentsController < ApplicationController
     @comment = @ticket.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
+      UserMailer.ticket_comment_email(@user, @ticket).deliver_now
       redirect_to ticket_url(@ticket)
+
     else
       flash.now[:alert] = "Message could not be sent, please try again"
       render :new

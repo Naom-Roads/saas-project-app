@@ -1,0 +1,17 @@
+<html>
+
+<head>
+  <meta content= 'text/html; charset= UTF-8' http-equiv ='Content-Type' />
+</head>
+
+<body>
+<h1>A Comment was added to <%= @ticket.ticket_number %> </h1>
+
+<p>
+  <%= @user.username %> added a comment to your ticket, head over to the ticket by
+  following this link: <%= ticket_url(@ticket) %>
+</p>
+
+</body>
+
+</html>

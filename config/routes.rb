@@ -2,10 +2,9 @@ Rails.application.routes.draw do
 
   default_url_options :host => 'localhost:3000'
 
-
   resources :tickets do
     resources :comments, shallow: true
-    # delete 'comment', to: 'comments#destroy'
+    # delete 'comment/:id', to: 'tickets#show'
   end
 
   devise_for :users
