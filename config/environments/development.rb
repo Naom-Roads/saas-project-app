@@ -75,4 +75,8 @@ Rails.application.configure do
   config.action_mailer.logger = nil
   config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
   config.action_mailer.raise_delivery_errors = false
+
+  # This will route background jobs to Sidekiq instead of rails
+  config.active_job.queue_adapter = :sidekiq
+
 end

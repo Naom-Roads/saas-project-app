@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :tickets do
     resources :comments, shallow: true
-    # delete 'comment/:id', to: 'tickets#show'
+    # delete 'comments/:id', to: 'tickets#show'
   end
 
   devise_for :users

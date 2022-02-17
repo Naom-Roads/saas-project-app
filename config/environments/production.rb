@@ -120,6 +120,10 @@ Rails.application.configure do
   config.action_mailer.logger = nil
   config.action_mailer.default_url_options = { :host => 'https://naoms-saas-project.herokuapp.com', :protocol => 'https'}
   config.action_mailer.delivery_method = :smtp
+
+  # This will route background jobs to Sidekiq instead of rails
+  config.active_job.queue_adapter = :sidekiq
+
 end
 
 ActionMailer::Base.smtp_settings = {

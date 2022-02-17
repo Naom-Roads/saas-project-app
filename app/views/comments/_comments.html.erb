@@ -1,24 +1,25 @@
 <!-- This is what we will use to show a list of messages belonging to the ticket-->
 
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
+<div class="card row-10 mb-3 p-2 m-auto" style="max-width: 540px;">
+  <div class="row-cols-auto">
+    <div class="col-md-6">
       <img src="..." class="img-fluid rounded-start" alt="...">
 <!--      Gravatar will go in place of image -->
     </div>
-    <div class="col-md-8">
+    <div class="row-cols-auto">
+    <div class="col-md-auto">
       <% @comments.each do |m| %>
       <div class="card-header">
 <!--        <span> # Tech assigned will display here</span>-->
         <span><%= "User: #{m.user.display_name}" %></span>
       </div>
-      <div class="card-body">
+      <div class="card-body row-10">
             <p class="card-text"><%= m.body %></p>
         <p class="card-text"><small class="text-muted"><%="Last updated #{m.created_at}" %></small></p>
-        <p><%= link_to 'Edit', edit_comment_path(m.id) %></p>
-        <p><%= button_to 'Destroy', m , method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+        <button type="button" class="btn btn-outline-warning"><%= link_to 'Edit', edit_comment_path(m.id) %></button>
+        <button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', m, method: :delete,  class: 'btn-btn-danger', data: { confirm: 'Are you sure?' } %> </button>
         <% end %>
-
+      </div>
       </div>
     </div>
   </div>

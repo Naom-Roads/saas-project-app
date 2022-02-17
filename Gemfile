@@ -28,7 +28,7 @@ gem 'devise'
 gem "devise-i18n"
 gem "devise-bootstrap-views", '~> 1.0'
 gem 'sendgrid-ruby'
-
+gem 'sidekiq', '~>6.0.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -49,6 +49,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry'
+
 end
 
 group :test do
@@ -64,6 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
     gem 'rails_12factor'
+
 end
 
 gem "dotenv-rails", "~> 2.7"
