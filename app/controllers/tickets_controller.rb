@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update destroy]
 
-
   # GET /tickets or /tickets.json
   # if user is an admin they can see all tickets otherwise user_path only shows tickets that belong to user
   def index
@@ -30,13 +29,14 @@ class TicketsController < ApplicationController
 
   # POST /tickets or /tickets.json
   def create
+    # does not work if I remove ticket params
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
     if @ticket.save
-      flash[:notice] = "Ticket was successfully created."
+      flash[:notice] = 'Ticket was successfully created.'
       redirect_to ticket_url(@ticket)
     else
-      flash.now[:alert] = "Ticket could not be created, please try again"
+      flash.now[:alert] = 'Ticket could not be created, please try again'
       render :new
     end
   end
@@ -45,7 +45,7 @@ class TicketsController < ApplicationController
   def update
     respond_to do |format|
       if @ticket.update(ticket_params)
-        format.html { redirect_to ticket_url(@ticket), notice: "Ticket was successfully updated." }
+        format.html { redirect_to ticket_url(@ticket), notice: 'Ticket was successfully updated.' }
         format.json { render :show, status: :ok, location: @ticket }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +58,7 @@ class TicketsController < ApplicationController
   def destroy
     @ticket.destroy
     respond_to do |format|
-      format.html { redirect_to tickets_url, notice: "Ticket was successfully destroyed." }
+      format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,8 +69,6 @@ class TicketsController < ApplicationController
   def set_ticket
     @ticket = Ticket.find(params[:id])
   end
-
-
 
   def ticket_params
     params.require(:ticket).permit(:id, :ticket_number, :subject, :description, :ticket_status)

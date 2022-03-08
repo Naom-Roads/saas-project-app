@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ticket, only: %i[show edit create update_status]
+  before_action :set_ticket, only: %i[show create update_status]
   # after_action :update_status, only: %i[create]
 
   def index
@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   def edit
 
   end
+
 
   def create
     @comment = @ticket.comments.new(comment_params)
@@ -52,11 +53,11 @@ class CommentsController < ApplicationController
     @ticket = Ticket.find(params[:ticket_id])
   end
 
-  # def update_status
-  #   @ticket.ticket_status = if (@ticket.ticket_status = 'New') || (@ticket.ticket_status.nil?) && @user.admin?
-  #     'In Progress'
-  #                           else
-  #     'Waiting on Customer'
-  #                           end
-  # end
+  def update_status
+    @ticket.ticket_status = if (@ticket.ticket_status = 'New') || (@ticket.ticket_status.nil?) && @user.admin?
+      'In Progress'
+                            else
+      'Waiting on Customer'
+                            end
+  end
 end

@@ -4,7 +4,7 @@ class Ticket < ApplicationRecord
   validates :subject, :description, presence: true
   after_validation :set_ticket_number, on: :create
 
-
+  # Adds New status on a ticket upon creation
   after_initialize do
     self.ticket_status = 'New' if self.ticket_status.nil?
   end
@@ -12,10 +12,6 @@ class Ticket < ApplicationRecord
   def set_ticket_number
     self.ticket_number = Ticket.order(created_at: :desc).first.ticket_number + 1
   end
-  #
-  # def after_save_commit do
-  #   if update_at_previously_changed?
-  #     TicketStatusJob.perform_later self
-  #   end
-  # end
+
+
 end
